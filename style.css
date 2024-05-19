@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  height: 100dvh;
+  width: 100dvw;
+  user-select: none;
+  background-color: #1f1f29;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#container {
+  height: 500px;
+  aspect-ratio: 1;
+  position: relative;
+  margin-bottom: -5%;
+}
+
+#gameContainer,
+#playerChoiceContainer {
+  height: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#playerChoiceContainer {
+  position: absolute;
+  justify-content: center;
+  gap: 50px;
+  inset: 0;
+  z-index: 2;
+  background-color: #1f1f29;
+}
+
+#playerChoiceContainer button {
+  padding: 1rem 2rem;
+  margin: 0 0.8rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: 1px solid ghostwhite;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#resetContainer {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#gameBoard {
+  height: 300px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputs {
+  cursor: pointer;
+  flex: 1 1 33%;
+  aspect-ratio: 1;
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+  border-color: ghostwhite;
+}
+
+.inputs::before {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  cursor: not-allowed;
+}
+
+.inputs:nth-child(3),
+.inputs:nth-child(6),
+.inputs:nth-child(9) {
+  border-right: 0;
+}
+
+.inputs:nth-child(7),
+.inputs:nth-child(8),
+.inputs:nth-child(9) {
+  border-bottom: 0;
+}
+
+.inputs.X::before {
+  content: "X";
+}
+
+.inputs.O::before {
+  content: "O";
+}
+
+#gameBoard.X .inputs.X::before {
+  animation: blink 600ms infinite ease;
+}
+
+#gameBoard.O .inputs.O::before {
+  animation: blink 600ms infinite ease;
+}
+
+#gameBoard.tie > .inputs {
+  animation: tie 600ms infinite ease;
+}
+
+@keyframes tie {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+
+#gameDetails {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#gameDetails > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#playerXContainer,
+#playerOContainer {
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+}
+
+#playerXContainer.active,
+#playerOContainer.active {
+  border-color: ghostwhite;
+}
+#gameDetails label {
+  font-size: 22px;
+}
+
+#gameDetails span {
+  font-size: 28px;
+}

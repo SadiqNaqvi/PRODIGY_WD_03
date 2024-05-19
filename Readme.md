@@ -1,4 +1,4 @@
-### Tic Tac Toe
+# Tic Tac Toe
 
 Feel the nostalgia with the Classic Tic Tac Toe game.
 <br/>

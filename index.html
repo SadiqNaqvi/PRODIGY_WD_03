@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <div id="container">
+      <div id="gameContainer">
+        <section id="gameBoard">
+          <span class="inputs" id="00"></span>
+          <span class="inputs" id="01"></span>
+          <span class="inputs" id="02"></span>
+          <span class="inputs" id="10"></span>
+          <span class="inputs" id="11"></span>
+          <span class="inputs" id="12"></span>
+          <span class="inputs" id="20"></span>
+          <span class="inputs" id="21"></span>
+          <span class="inputs" id="22"></span>
+        </section>
+        <section id="gameDetails">
+          <div id="playerXContainer">
+            <label for="playerX"> Player (X) </label>
+            <span id="playerX">0</span>
+          </div>
+          <div>
+            <label for="tieCount"> Tie </label>
+            <span id="tieCount">0</span>
+          </div>
+          <div id="playerOContainer" class="active">
+            <label for="playerO"> Player (O) </label>
+            <span id="playerO">0</span>
+          </div>
+        </section>
+      </div>
+      <div id="playerChoiceContainer">
+        <h2>Choose before you go</h2>
+        <div>
+          <button id="playerVsAi">vs Ai</button>
+          <span>or</span>
+          <button id="playerVsPlayer">vs Player 2</button>
+        </div>
+      </div>
+      <div id="resetContainer"></div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
